@@ -53,10 +53,27 @@ const reviews = [
 
   // load initial item
   window.addEventListener('DOMContentLoaded', ()=> {
-    const item = reviews[currentItem]
+   showPerson(currentItem)
+  }) 
+
+  // Show person based on item
+  function showPerson(person) {
+    const item = reviews[person]
     img.src = item.img 
     author.textContent = item.name
     job.textContent = item.job
     info.textContent = item.text
-  })
-  
+  }
+
+// Show next person
+  nextBtn.addEventListener('click', ()=> {
+    currentItem++
+    showPerson(currentItem)
+  }) 
+
+// Show previous person 
+
+  prevBtn.addEventListener('click', ()=> {
+    currentItem--
+    showPerson(currentItem)
+  }) 
